@@ -1,0 +1,61 @@
+@mixin flex($direction,$justify,$align){
+    display        : flex;
+    flex-direction : $direction;
+    justify-content: $justify;
+    align-items    : $align;
+}
+
+@mixin flex-center{
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+}
+
+@mixin font($category,$style,$weight,$height,$spacing){
+  font-family   : $category, sans-serif;
+  font-style    : $style;
+  font-weight   : $weight;
+  line-height   : $height;
+  letter-spacing: $spacing;
+  
+  /*Example of use 
+   @include font (italic,400,1, 5px)
+   @include font (normal,400, normal,normal)
+   */
+}
+
+@mixin box($width,$height: $width){
+  width : $width;
+  height: $height;
+  /*
+    @include box (200px,300px)
+    @include box (200px)
+  */
+}
+
+@mixin cover-background{
+  background-repeat  : no-repeat;
+  background-size    : cover ;
+  background-position: center;
+  /*
+    background-image:url(url)
+    @inlcude cover-background;
+  */
+}
+
+@mixin mb($margin-bottom){
+    margin-bottom: $margin-bottom;
+}
+
+
+@mixin media($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+      @media screen and (min-width : map_get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    } @else if type-of($breakpoint)==number and unit($breakpoint) == 'px'{
+      @media screen and (min-width : $breakpoint) {
+        @content;
+      }
+    }
+  }

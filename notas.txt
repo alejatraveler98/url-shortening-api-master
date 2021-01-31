@@ -1,0 +1,129 @@
+Instalación únicas 
+1.- npm install --global gulp-cli 
+
+Este comadno lo tenemos que ejecutar solo una vez. Sire para instalar gulp de fomra global en el equipo para tenerlo disponible en todos los proyectos
+
+Instalaciones que se han de ejecutar en cada proyecto en el que queramos inciar gulp
+
+2.- npm init
+3.- npm install --save-dev gulp
+4.- npm install --save-dev @babel/core @babel/register @babel/present-env
+
+
+Crear archivo gulpfile.babel.js
+
+Este archivo es donde colocaremos todas nuestras tareas el nombre tiene que ser así ya que es como babel en la versión 7 nos pide que sea así el nombre
+
+Crear el archivo babel.src
+
+Si no creamos el archivo babel.src no funcionara gulpfile
+
+
+Transpilar JavaScript
+
+gulp-babel:
+
+Este es el módulo que usará para convertir el códgio a ES5 (soportado por todos los navegadores)
+El primer babel que instalamos fue para que babel pueda trabajar con la nueva sintaxis 
+npm install --save-dev gulp-babel
+
+gulp-terser:
+
+Es la nueva versión de uglify, sirve para ofrece ofsucar el código 
+npm install --save-dev gulp-terser
+
+gulp-concat:
+
+Une todos nuestros archivos js en uno solo
+npm install --save-dev gulp-concat
+
+
+
+HTML 
+
+npm install --save gulp-htmlmin
+Minifica y limpia nuestro HTML
+https://github.com/kangax/html-minifier
+
+CSS
+
+npm install --save-dev gulp-postcss cssnano autoprefixer 
+
+ 
+En esta parte tuvimos un error con el autprefixer por temas de node y las versiones de postcss
+
+Para utilizar autoprefixe hay dos opciones, o añadir los navegadores a los al archivo .browserlistrc
+
+postCSS: https://github.com/postcss/postcss/blob/master/docs/plugins.md
+
+
+PUG 
+
+npm install --save-dev gup-pug
+
+
+SASS 
+
+npm install --save-dev gulp-sass
+
+Limpiar caché 
+npm install --save-dev gulp-cache-bust
+Este se tiene que colocar dentro de la tarea de HTML o PUG dependiendo cual estemos utilizando 
+
+Comprimir imágenes
+
+npm install --save-dev gulp-imagemin
+
+Browser Sync 
+
+npm install --save-dev browser-sync
+
+Gulp Plumber
+
+npm install --save-dev gulp-plumber
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sintaxis de Gulp Task
+
+El primer parametro es el nombre de la tarea y el segundo es un callback o una función en la que indicamos que clase de tareas vamos a necesitarque ejecute 
+
+src() indica la ruta o array con las rutas de todos los archivos en los que querremos indicar que queremos realizar las operaciones
+* significa que sean todos los archivos con una extensión 
+
+pipe() Usando este método decimos a Gulp qué queremos hacer sobres los archivos. Si usamos plugins, tan solo tenemos que pasárselo como paámetro
+
+dest () indicamos dónde queremos guardar el archivo
+
+Cabe destacar que gulp no hace las operaciones directamente sobre el arhcivo, sino que carga el archivo en memoria y debes indciarlo cuándo y dónde queremos guardar los cambios.
+
+
+Podemos agregar un watch a la tarea por default en la que indicamos que el watch vigilará los archivos con extensión js, gulp series indica que las tareas se van a realizar de manera secuencial
+
+
+Dentro del código tuvimos que cambiar el orden de la tarea de concat para que primero concatene y luego realice los demás de esa manera evitamos que el "use strict" se coloque dos veces
+
+
+
+Gulp Task View 
+
+En pipe revisa los parametros del plugin en este caso solo saber si estamos trabajando en modo de desarrrollo o producción
+
+Hay que crear la variable que determinará en que modo lo haremos
+
+const production = false 

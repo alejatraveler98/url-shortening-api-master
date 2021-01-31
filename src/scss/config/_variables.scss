@@ -1,0 +1,55 @@
+$max-width    : 1250px;
+$header-height: 3rem;
+$padding: 1rem;
+$mb     : 1rem;
+
+/*Para ocupar el mixin se requiere de un breakpoint, este breakpoint
+contiene las medidas que vamos a manejar para nuestras pantallas ya dependera
+de nosotros que medidas vamos a tomar porque */
+$breakpoints : (
+        small : 320px,
+        medium: 640px,
+        large : 960px,
+        xlarge: 1440px
+);
+
+// Variables de apilamiento (z-index)
+:root {
+    --z-back   : -10;
+    --z-normal : 1;
+    --z-tooltip: 10;
+    --z-fixed  : 100;
+    --z-modal  : 1000;
+  }
+
+//Paleta de colores
+:root{
+  //Primary
+
+  --cyan: hsl(180, 66%, 49%);
+  --dark-violet: hsl(257, 27%, 26%);
+  //Secondary
+  --red: hsl(0, 87%, 67%);
+  //Neutral
+  --gray: hsl(0, 0%, 75%);
+  --grayish-violet: hsl(257, 7%, 63%);
+  --very-dark-blue: hsl(255, 11%, 22%);
+  --very-dark-violet: hsl(260, 8%, 14%);
+}
+
+//Variables de tipografia 
+:root{
+    --h1-font-size :1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1rem;
+    --small-font-size:.95rem;
+
+
+@include media(small) {
+    --h1-font-size   : 2.5rem;
+    --h2-font-size   : 1.75rem;
+    --h3-font-size   : 1.5rem;
+    --body-font-size : 1rem;
+    --small-font-size: .8rem;
+  }
+}

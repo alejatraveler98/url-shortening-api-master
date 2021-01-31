@@ -1,0 +1,33 @@
+$padding: 1rem;
+$mb     : 1rem;
+
+.l-container {
+    max-width    : 1200px;
+    padding-left : $padding;
+    padding-right: $padding;
+ 
+    @include media(large){
+        margin-left : auto;
+        margin-right: auto;
+    }
+    
+}
+
+.center-i{
+    text-align: center ;
+    @include media(large){
+        text-align: left;
+    }   
+}
+
+.mb-1{
+    @include mb(1rem)
+}
+
+.mb-2{
+    @include mb(2rem);
+}
+
+.mb-separation{
+    @include mb(4rem);
+}
