@@ -10,6 +10,7 @@
     }
 
     &__content{
+        display: none;
         position: absolute;
         background-color: var(--dark-violet);
         top:3rem;
@@ -18,12 +19,19 @@
         right: 0;
         margin-left: auto;
         margin-right: auto;
+        border-radius: 15px;
         @include media(large){
               
             grid-column:2/span 2;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: initial;
+            width: initial;
+            margin-left: 0;
+            margin-right: 0;
+            border-radius: 0;
+            background-color: initial;
         }
     }
 
@@ -32,25 +40,67 @@
 
 
 .main-nav{
-    
+    text-align: center;
     &__list{
-        display:flex;
-        justify-content:space-between;
+        @include media(large){
+            display:flex;
+            justify-content:space-between;
+        }
+    }
+
+    &__item:nth-child(3){
+        margin: 0 2rem;
+        padding-bottom:1rem ;
+        border-bottom: 0.5px solid var(--grayish-violet);
+        @include media(large){
+              margin:initial;
+              padding:initial;
+              border-bottom: initial;
+        }
     }
 
     &__link{
-        padding-left:1rem;
-        padding-right:1rem;
+        display: block;
+        padding: 1.5rem;
+        color:#fff;
+        font-weight: 700;
+        @include media(large){
+            padding-left:1rem;
+            padding-right:1rem;
+            color: var(--grayish-violet);   
+        }
+        
     }
+}
+
+.main-button{
+    text-align: center;
 }
 
 .main-toggle{
     grid-column:4/4;
     width:2rem;
-    height: 2rem;
-    background-color:red;
+
     @include media(large){
         display:none;
           
+    }
+
+    &__img{
+        fill: var(--grayish-violet);
+    }
+}   
+
+.display-block{
+    display: block;
+    @include media(large){
+          display: initial;
+    }
+}
+
+.overflow-hidden{
+    overflow-y: hidden;
+    @include media(large){
+          overflow-y: initial;
     }
 }
