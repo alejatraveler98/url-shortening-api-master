@@ -1,13 +1,17 @@
 .button{
-    padding: 1.5rem 1rem;
+    // padding: 1rem 1rem;
     display: block;
     color:#fff;
     font-weight: 700;
 
     @include media(large){
           display: initial;
-          color:var(--grayish-violet)
     }
+}
+    
+.button--login{
+        @extend .button;
+        color:var(--grayish-violet)
 }
 
 .button--blue{
@@ -21,4 +25,11 @@
          padding:.6rem 1.5rem;
          color:#fff; 
     }
+}
+
+.button--started{
+    @extend .button;
+    padding: .8rem 1.5rem;
+    background-color: var(--cyan);
+    border-radius: 30px;
 }

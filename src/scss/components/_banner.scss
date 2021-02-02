@@ -1,0 +1,31 @@
+.banner{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &__content{
+        margin-left: 90px;
+        margin-right: 3rem;
+    }
+
+    &__title{
+        font-size: 70px;
+        color:var(--dark-violet);
+    }
+
+    &__paragraph{
+        color:var(--grayish-violet);
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 3rem;
+    }
+
+    &__img{
+        position: relative;
+        right: 0;
+        align-self: flex-end;
+        width:650px;
+        outline: 1px solid red;
+    }
+}
+
