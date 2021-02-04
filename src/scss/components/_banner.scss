@@ -1,16 +1,35 @@
 .banner{
     display:flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
 
+    @include media(1240px){
+         flex-direction: row; 
+    }
+
     &__content{
-        margin-left: 90px;
-        margin-right: 3rem;
+        order: 2;
+        text-align: center;
+        width: 70%;
+
+        @include media(1240px){
+            margin-right: 3rem;
+            margin-left: 90px;
+            order:1; 
+            text-align: left;
+        }
     }
 
     &__title{
-        font-size: 70px;
         color:var(--dark-violet);
+        @include media(medium){
+            font-size: 50px;
+        }
+        @include media(1240px){
+            font-size: 70px;
+              
+        }
     }
 
     &__paragraph{
@@ -21,11 +40,18 @@
     }
 
     &__img{
-        position: relative;
-        right: 0;
-        align-self: flex-end;
+        // position: relative;
+        // right: 0;
+        // align-self: flex-end;
         width:650px;
-        outline: 1px solid red;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        order:1;
+        margin-bottom: 3rem;
+        // outline: 1px solid red;
+        @include media(1240px){
+            order:2; 
+        }
     }
 }
 

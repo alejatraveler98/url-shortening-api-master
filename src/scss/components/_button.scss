@@ -3,6 +3,7 @@
     display: block;
     color:#fff;
     font-weight: 700;
+    padding:.8rem 1rem;
 
     @include media(large){
           display: initial;
@@ -16,7 +17,7 @@
 
 .button--blue{
     @extend .button;
-    padding:.8rem 1rem;
+    // padding:.8rem 1rem;
     border-radius: 40px;
     margin: 0 2rem 2rem;
     background-color:var(--cyan);

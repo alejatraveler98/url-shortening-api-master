@@ -60,8 +60,8 @@ gulp.task('html-min', () => {
 gulp.task('styles', () => {
 	return gulp
 		.src('./src/styles/*.css')
-		.pipe(plumber())
-		.pipe(postcss(cssPuglins))
+		//.pipe(plumber())
+		//.pipe(postcss(cssPuglins))
 		.pipe(gulp.dest('./public/styles'))
 		.pipe(browserSync.stream());
 })
