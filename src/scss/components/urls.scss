@@ -1,0 +1,47 @@
+.links{
+    max-width: 1200px;
+    margin-left: 2rem;
+    margin-right:2rem;
+    background-color: var(--very-dark-blue);
+    border-radius: 10px;
+    margin-bottom:3rem;
+    &__form{
+        padding:2rem;
+        @include media(medium){
+             display:flex; 
+             justify-content: space-between;
+        }
+    }
+}
+
+.frm{
+    @include media(medium){
+          width: 90%;
+          margin-right: 1rem;
+    }
+}
+.frmLink , .btnSubmit{
+    height: 2.3rem;
+    width: 100%;
+    border:0;
+    border-radius: 5px;
+}
+.frmLink{
+    margin-bottom: 1.5rem;
+
+    @include media(medium){
+         margin-bottom:0; 
+    }
+}
+
+.btnSubmit{
+    background-color: var(--cyan);
+    color:var(--white);
+    font-weight: 700;
+    @include media(medium){
+         width:40%; 
+    }
+    @include media(large){
+         width:20%; 
+    }
+}

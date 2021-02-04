@@ -42,7 +42,8 @@
     </header>
 
     <main class="">
-        <div class="banner">
+        <!-- Section Banner -->
+        <div class="banner mb-separation">
             <div class="banner__content">
                 <h1 class="banner__title">More than just shorter links</h1>
                 <p class="banner__paragraph">Build your brand’s recognition and get detailed insights
@@ -53,14 +54,47 @@
             <img class="banner__img" src="images/illustration-working.svg" alt="Illustration">
         </div>
 
-        <div class="cards">
-            <form>
-                <div>
-                    <input type="text" placeholder="Shorten a link here">
-                  </div>
-                <button>Shorten It!</button>
+        <!-- Section Links or Urls -->
+        <div class="links">
+            <form id="links__form" class="links__form">
+                <div class="frm">
+                    <label for="frmLink"></label>
+                    <input id="frmLink" class="frmLink"  type="text" placeholder="Shorten a link here">
+                    <span id="frmError" class="frmError"></span>
+                </div>
+                <button class="btnSubmit">Shorten It!</button>
             </form>
         </div>
+
+        <!-- Section Cards -->
+
+        <div class="cards">
+            <div class="card__content">
+                <h2 class="card__title">Advanced Statistics</h2>
+                <p class="card__paragraph">
+                    Track how your links are performing across the web with our 
+                    advanced statistics dashboard.
+                </p>
+                <img class="card__img" src="images/icon-brand-recognition.svg" alt="Brad recognition">
+            </div>
+            <div class="card__content">
+                <h2 class="card__title">Advanced Statistics</h2>
+                <p class="card__paragraph">
+                    Track how your links are performing across the web with our 
+                    advanced statistics dashboard.
+                </p>
+                <img class="card__img" src="images/icon-brand-recognition.svg" alt="Brad recognition">
+            </div>
+            <div class="card__content">
+                <h2 class="card__title">Advanced Statistics</h2>
+                <p class="card__paragraph">
+                    Track how your links are performing across the web with our 
+                    advanced statistics dashboard.
+                </p>
+                <img class="card__img" src="images/icon-brand-recognition.svg" alt="Brad recognition">
+            </div>
+        </div>
+
     </main>
 
 
