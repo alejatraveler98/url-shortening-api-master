@@ -43,13 +43,13 @@
         // position: relative;
         // right: 0;
         // align-self: flex-end;
-        width:650px;
         padding-left: 1rem;
         padding-right: 1rem;
         order:1;
         margin-bottom: 3rem;
         // outline: 1px solid red;
         @include media(1240px){
+            width:650px;
             order:2; 
         }
     }

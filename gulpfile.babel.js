@@ -126,7 +126,8 @@ gulp.task('imgmin', () => {
 
 gulp.task('default', () => {
 	browserSync.init({
-		server:'./public'
+		server:'./public',
+		browser: 'firefox'
 	})
 	gulp.watch('./src/*.html', gulp.series('html-min')).on('change',browserSync.reload)	
 	//gulp.watch('./src/styles/*.css', gulp.series('styles'))
