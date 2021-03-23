@@ -4,8 +4,9 @@ const buttonLink = document.getElementById('buttonLink')
 const linksForm = document.getElementById('links-form')
 const templateLinks = document.getElementById('template-links')
 const inputLink = document.getElementById('frmLink')
-const api = 'https://api.shrtco.de/v2/shorten?url='
-let mediaQuery = window.matchMedia("(min-width:960px)");
+const api = 'https://api.shrtco.de/v2/shorten?url=';
+let   links = document.querySelector('#linksItems');
+let   mediaQuery = window.matchMedia("(min-width:960px)");
 mainToggle.addEventListener('click', () => {
     mainHeader.classList.toggle('display-block')
     document.body.classList.toggle('overflow-hidden')
@@ -22,6 +23,20 @@ linksForm.addEventListener('submit', e =>{
     e.preventDefault();
     getLink(inputLink.value);
     
+})
+
+links.addEventListener('click', e=>{
+    console.log(e.target);
+    if(e.target.classList.contains('items-button')){
+        const selectText = e.target.parentElement.childNodes[0].textContent
+        console.log(e.target.parentElement.childNodes[0].textContent);
+        navigator.clipboard.writeText(selectText).then(function() {
+            console.log('Async: Copying to clipboard was successful!');
+          }, function(err) {
+            console.error('Async: Could not copy text: ', err);
+          });
+          
+    }
 })
 
 
