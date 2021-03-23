@@ -69,12 +69,12 @@ gulp.task('styles', () => {
 gulp.task('babel', () => {
 	return gulp
 		.src('./src/js/*.js')
-		.pipe(plumber())
+		// .pipe(plumber())
 		// .pipe(concat('scripts-min.js'))
-		.pipe(babel({
-			presets: ['@babel/env']
-		}))
-		.pipe(terser())
+		// .pipe(babel({
+		// 	presets: ['@babel/env']
+		// }))
+		// .pipe(terser())
 		.pipe(gulp.dest('./public/js'))
 })
 
