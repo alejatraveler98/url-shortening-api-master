@@ -25,31 +25,61 @@
 .card{
     &__items{
         position: relative;
+
+        &:nth-child(2)::before, &:nth-child(2)::after{
+            content: '';
+            display: block;
+            position: absolute;
+            width: 3.6rem;
+            height: .5rem;
+            background-color: var(--cyan);
+            transform: rotate(90deg);
+            right: 0;
+            left: 0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &:nth-child(2)::before{
+            
+            top: -1.5rem;
+
+        }
+        :nth-child(2)::after{
+            bottom: 0;
+        }
+
+        @include media(medium){
+            &:nth-child(2)::before, &:nth-child(2)::after{
+                display: none;
+            }
+        }
+
         @include media(large){
             text-align: left; 
-            
+            &:nth-child(2)::before, &:nth-child(2)::after{
+                display: block;
+                transform: rotate(0);
+                margin-left:initial;
+                margin-right: initial;
+                
+            }
             &:nth-child(2){
-               top:3rem;
+                top:3rem;
             }
             &:nth-child(3){
                 top:5rem;
             }
             
-            &:nth-child(2)::before, &:nth-child(2)::after{
-                content: '';
-                display: block;
-                position: absolute;
-                width: 3.6rem;
-                height: .5rem;
-                background-color: var(--cyan);
-                top:5rem;
-            }
             
             &:nth-child(2)::before{
+                top:5rem;
                 left:-3.6rem;
             }
-    
+            
             &:nth-child(2)::after{
+                top:5rem;
+                left:initial;
                 right: -3.6rem;
             }
        }

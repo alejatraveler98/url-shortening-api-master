@@ -4,7 +4,7 @@
     color:#fff;
     font-weight: 700;
     padding:.8rem 1rem;
-
+    cursor: pointer;
     @include media(large){
           display: initial;
     }
@@ -33,4 +33,28 @@
     padding: .8rem 1.5rem;
     background-color: var(--cyan);
     border-radius: 30px;
+}
+
+.btnSubmit{
+    background-color: var(--cyan);
+    color:var(--white);
+    font-weight: 700;
+    width:100%; 
+    cursor: pointer;
+
+    // @include media(medium){
+        //      width:40%; 
+        // }
+        @include media(medium){
+            width: 300px;
+        }
+    }
+    
+// .btnSubmit:hover{
+//     cursor: pointer;
+// }
+
+.button-disabled{
+    cursor: not-allowed;
+    // pointer-events: none;
 }

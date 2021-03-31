@@ -19,29 +19,18 @@
 }
 .frmLink , .btnSubmit{
     height: 2.3rem;
-    width: 100%;
     border:0;
     border-radius: 5px;
 }
 .frmLink{
     margin-bottom: 1.5rem;
-
+    width: 100%;
     @include media(medium){
          margin-bottom:0; 
     }
 }
 
-.btnSubmit{
-    background-color: var(--cyan);
-    color:var(--white);
-    font-weight: 700;
-    @include media(medium){
-         width:40%; 
-    }
-    @include media(large){
-         width:20%; 
-    }
-}
+
 
 .items__links{
     padding-left: 2rem;
@@ -78,5 +67,4 @@
     @extend .button--blue;
     padding: .5rem 2rem;
     border-radius: 10px;
-
 }
