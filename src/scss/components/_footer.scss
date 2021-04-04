@@ -1,6 +1,12 @@
 .footer{
     background-color: var(--very-dark-violet);
-
+    height: 400px;
+    @include media(medium){
+          display: grid;
+          justify-content: space-around;
+          align-items: center;
+          grid-template-columns: 1fr 2fr 1fr;
+    }
     &__paragraph{
         margin-top: 0;
         padding-top: 2rem;
@@ -11,7 +17,7 @@
 
     &__list{
         padding-bottom: 2rem;
-
+        
         
     }
     
@@ -35,9 +41,16 @@
 
 .content-list{
     text-align: center;
+    @include media(medium){
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+  }
 }
 
 .content-social{
-    display: flex;
-    justify-content: space-around;
+    display: flex;    
+    &__items{
+        padding:1rem;
+    }
 }
