@@ -50,11 +50,8 @@
         }
     }
     
-// .btnSubmit:hover{
-//     cursor: pointer;
-// }
 
-.button-disabled{
-    cursor: not-allowed;
-    // pointer-events: none;
+.button--purple{
+   @extend .button--blue;
+   align-self: center;
 }
