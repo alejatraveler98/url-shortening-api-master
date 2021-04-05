@@ -1,7 +1,7 @@
 .footer{
     background-color: var(--very-dark-violet);
-    height: 400px;
-    @include media(medium){
+    @include media(950px){
+          height: 400px;
           display: grid;
           justify-content: space-around;
           align-items: center;
@@ -22,7 +22,6 @@
     }
     
     &__item{
-        // display: block;
         padding:.5rem;
         &:first-child > a{
             color: var(--white);
