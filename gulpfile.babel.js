@@ -47,13 +47,13 @@ gulp.task('html-min', () => {
 	return gulp
 		.src('./src/*.html')
 		.pipe(plumber())
-		.pipe(htmlmin({
+		/*.pipe(htmlmin({
 			collapseWhitespace: true,
 			removeComments: true
-		}))
-		.pipe(cacheBust({
+		}))*/
+		/*.pipe(cacheBust({
 			type: 'timestamp'
-		}))
+		}))*/
 		.pipe(gulp.dest('./public'))
 })
 
