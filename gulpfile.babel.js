@@ -68,7 +68,7 @@ gulp.task('styles', () => {
 
 gulp.task('babel', () => {
 	return gulp
-		.src('./src/js/*.js')
+		.src('./src/js/**/*.js')
 		// .pipe(plumber())
 		// .pipe(concat('scripts-min.js'))
 		// .pipe(babel({
@@ -133,6 +133,7 @@ gulp.task('default', () => {
 	//gulp.watch('./src/styles/*.css', gulp.series('styles'))
 	gulp.watch('./src/views/**/*.pug', gulp.series('views')).on('change',browserSync.reload)	
 	gulp.watch('./src/scss/**/*.scss', gulp.series('sass'))
-	gulp.watch('./src/js/*.js', gulp.series('babel')).on('change',browserSync.reload)
+	gulp.watch('./src/js/**/*.js', gulp.series('babel')).on('change',browserSync.reload)
 })
 
+// .src('./src/js/**/*.js')

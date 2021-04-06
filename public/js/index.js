@@ -1,16 +1,19 @@
-const mainToggle = document.getElementById('main-toggle')
-const mainHeader = document.getElementById('main-header__content')
-const buttonLink = document.getElementById('buttonLink')
-const linksForm = document.getElementById('links-form')
-const templateLinks = document.getElementById('template-links')
-const inputLink = document.getElementById('frmLink')
-const api = 'https://api.shrtco.de/v2/shorten?url=';
-let   links = document.querySelector('#linksItems');
-let   mediaQuery = window.matchMedia("(min-width:960px)");
+//Variables
+import getLink from './fetch/fetch.js'
+import {animationsOff,animationError} from './ui.js'
+import {
+    mainToggle,
+    mainHeader,
+    buttonLink,
+    linksForm,
+    templateLinks,
+    inputLink,
+    links,
+    mediaQuery,
+    regex
+} from './fetch/variables.js'
 
-
-
-
+//Listeners 
 mediaQuery.addEventListener('change', e => {
     console.log(e)
     if (e.matches) {
@@ -26,18 +29,40 @@ mainToggle.addEventListener('click', () => {
 
 linksForm.addEventListener('submit', e =>{
     e.preventDefault();
-    getLink(inputLink.value);
+    console.log(inputLink.value);
+    const value = inputLink.value;
+    if(inputLink.value === '' ){
+        animationError();
+    }
+    if(value.length > 1  && value.match(regex)){
+        getLink(inputLink.value)
+        .then(data =>{
+        console.log(data)
+        printLink(data)  
+        animationsOff()
+        })  
+
+    }else{
+        console.log('No es un link');
+    }
 })
+
+
 
 links.addEventListener('click', e=>{
     console.log(e.target);
     const button = e.target.classList.contains('items-button')
-    if(e.target.classList.contains('items-button')){
-        const selectText = e.target.parentElement.childNodes[0].textContent
+    if(button){
+        copyText(e);
+    }
+})
+
+
+//Functions
+const copyText = (e) =>{
+    const selectText = e.target.parentElement.childNodes[0].textContent
         console.log(e.target.parentElement.childNodes[0].textContent);
         navigator.clipboard.writeText(selectText).then(function() {
-            // console.log('Async: Copying to clipboard was successful!');
-            // console.log(button);
             e.target.textContent= 'Copied';
             e.target.style.background =  getComputedStyle(document.documentElement).getPropertyValue('--dark-violet')
             linksForm.reset()
@@ -46,29 +71,8 @@ links.addEventListener('click', e=>{
                 e.target.style.background = getComputedStyle(document.documentElement).getPropertyPriority('--cyan')
             }, 3000);
           }, function(err) {
-            console.error('Async: Could not copy text: ', err);
+            console.error('Could not copy text ', err);
           });
-          
-    }
-})
-
-
-const getLink = (value) =>{
-    let url = value
-    let dataLink;
-    document.querySelector('.sk-cube-grid').style.display = 'block';
-    document.querySelector('.btnSubmit').style.display = 'none'
-    console.log(`${api}${url}`);
-    fetch(`${api}${url}`)
-    .then ((rest) => rest.json())
-    .then ((data) => {
-        dataLink = data; 
-        printLink(dataLink)  
-        document.querySelector('.sk-cube-grid').style.display = 'none';
-        document.querySelector('.btnSubmit').style.display = 'block'
-
-    })
-    .catch(error => console.log(error))    
 }
 
 const printLink = ({result} = getLink) =>{

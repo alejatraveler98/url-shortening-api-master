@@ -1,5 +1,4 @@
 .button{
-    // padding: 1rem 1rem;
     display: block;
     color:#fff;
     font-weight: 700;
@@ -8,11 +7,17 @@
     @include media(large){
           display: initial;
     }
+   
+
+    
 }
     
 .button--login{
         @extend .button;
         color:var(--grayish-violet);
+        &:hover{
+            background-color: none;
+        }
 }
 
 .button--blue{
@@ -26,6 +31,9 @@
          padding:.6rem 1.5rem;
          color:#fff; 
     }
+
+   
+   
 }
 
 .button--started{
@@ -33,6 +41,8 @@
     padding: .8rem 1.5rem;
     background-color: var(--cyan);
     border-radius: 30px;
+    
+    
 }
 
 .btnSubmit{
@@ -40,11 +50,9 @@
     color:var(--white);
     font-weight: 700;
     width:100%; 
+    font-size: 18px;
     cursor: pointer;
 
-    // @include media(medium){
-        //      width:40%; 
-        // }
         @include media(medium){
             width: 300px;
         }
@@ -54,4 +62,11 @@
 .button--purple{
    @extend .button--blue;
    align-self: center;
+}
+
+
+.button--blue,.button--started, .btnSubmit{
+    &:hover{
+        background-color: hsl(180, 66%, 75%);;
+    }
 }
