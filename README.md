@@ -2,13 +2,13 @@
 
 This project is live on 
 
-# Local Septup 
+### Local Septup 
 
-## Install Node Modules 
+Install Node Modules 
 
 npm install 
 
-## Start project using Gulp
+### Start project using Gulp
 
 gulp
 
