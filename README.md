@@ -1,6 +1,6 @@
 # Frontend Mentor - Url Shorttening Api Master
 
-This project is live on 
+This project is live on https://url-shortening-api-master-lyart.vercel.app/
 
 ### Local Septup 
 
