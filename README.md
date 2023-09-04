@@ -1,4 +1,4 @@
-# Frontend Mentor - Url Shorttening Api Master
+# Frontend Mentor - Url Shortening Api Master
 
 This project is live on https://url-shortening-api-master-lyart.vercel.app/
 
